@@ -55,6 +55,11 @@ class Student extends Person {
   sprintChallenge(subject) {
     console.log(`${this.name } has begun sprint challenge on ${subject}`);
   }
+  graduate() {
+    if(this.grade >= 70) {
+      console.log(`Congratulations! ${this.name } has graduated with a score of ${this.grade}`);
+    }
+  }
 }
 
 class ProjectManager extends Instructor {
@@ -114,7 +119,7 @@ const johnny = new Student({
   previousBackground: 'Marine',
   className: 'WEBEU2',
   favSubjects: ['Html', 'CSS', 'JavaScript'],
-  grade: 50,
+  grade: 70,
 });
 
 const jane = new Student({
@@ -125,7 +130,7 @@ const jane = new Student({
   previousBackground: 'Poker Player',
   className: 'WEBEU2',
   favSubjects: ['Go', 'C++', 'C'],
-  grade: 50,
+  grade: 70,
 });
 
 const maria = new Student({
@@ -136,7 +141,7 @@ const maria = new Student({
   previousBackground: 'Sniper',
   className: 'WEBEU2',
   favSubjects: ['Haskell', 'Java'],
-  grade: 50,
+  grade: 70,
 });
 
 const aletta = new ProjectManager({
@@ -199,6 +204,7 @@ const vince = new ProjectManager({
 console.log(maria.grade);
 ashley.changeGrade(maria);
 console.log(maria.grade);
+maria.graduate();
 
 
 // console.log();
