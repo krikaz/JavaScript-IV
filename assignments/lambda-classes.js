@@ -27,6 +27,14 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name} receives a perfect score on ${subject}`)
   }
+  changeGrade(student) {
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min
+    }
+    student.grade += getRandomInt(-5, 6);
+  }
 }
 
 class Student extends Person {
@@ -35,6 +43,7 @@ class Student extends Person {
     this.previousBackground = obj.previousBackground;
     this.className = obj.className;
     this.favSubjects = obj.favSubjects;
+    this.grade = obj.grade;
   }
 
   listsSubjects() {
@@ -74,7 +83,7 @@ const fred = new Instructor({
   gender: 'male',
   favLanguage: 'JavaScript',
   specialty: 'Front-end',
-  catchPhrase: `Don't forget the homies`
+  catchPhrase: `Don't forget the homies`,
 });
 
 const jack = new Instructor({
@@ -84,7 +93,7 @@ const jack = new Instructor({
   gender: 'male',
   favLanguage: 'Go',
   specialty: 'Back-end',
-  catchPhrase: 'Do it now'
+  catchPhrase: 'Do it now',
 });
 
 const rose = new Instructor({
@@ -94,7 +103,7 @@ const rose = new Instructor({
   gender: 'female',
   favLanguage: 'Python',
   specialty: 'Full Stack',
-  catchPhrase: 'Fully fuller'
+  catchPhrase: 'Fully fuller',
 });
 
 const johnny = new Student({
@@ -104,7 +113,8 @@ const johnny = new Student({
   gender: 'male',
   previousBackground: 'Marine',
   className: 'WEBEU2',
-  favSubjects: ['Html', 'CSS', 'JavaScript']
+  favSubjects: ['Html', 'CSS', 'JavaScript'],
+  grade: 50,
 });
 
 const jane = new Student({
@@ -114,7 +124,8 @@ const jane = new Student({
   gender: 'female',
   previousBackground: 'Poker Player',
   className: 'WEBEU2',
-  favSubjects: ['Go', 'C++', 'C']
+  favSubjects: ['Go', 'C++', 'C'],
+  grade: 50,
 });
 
 const maria = new Student({
@@ -124,7 +135,8 @@ const maria = new Student({
   gender: 'female',
   previousBackground: 'Sniper',
   className: 'WEBEU2',
-  favSubjects: ['Haskell', 'Java']
+  favSubjects: ['Haskell', 'Java'],
+  grade: 50,
 });
 
 const aletta = new ProjectManager({
@@ -133,7 +145,7 @@ const aletta = new ProjectManager({
   age: 33,
   gender: 'female',
   gradClassName: 'CS50',
-  favInstructor: 'Dan'
+  favInstructor: 'Dan',
 });
 
 const ashley = new ProjectManager({
@@ -142,7 +154,7 @@ const ashley = new ProjectManager({
   age: 29,
   gender: 'female',
   gradClassName: 'CS50',
-  favInstructor: 'Jackie'
+  favInstructor: 'Jackie',
 });
 
 const vince = new ProjectManager({
@@ -151,34 +163,48 @@ const vince = new ProjectManager({
   age: 25,
   gender: 'male',
   gradClassName: 'CS50',
-  favInstructor: 'Brian'
+  favInstructor: 'Brian',
 });
 
 
 
-// testing code
+// testing objects created
 
-console.log('======== Testing Instructors =========');
-console.log(fred.name, fred.location);
-console.log(jack.age, jack.gender);
-console.log(rose.favLanguage, rose.specialty, rose.catchPhrase);
-fred.speak();
-jack.demo('Ancient Rome History');
-rose.grade(jane, 'Mathematics');
+// console.log('======== Testing Instructors =========');
+// console.log(fred.name, fred.location);
+// console.log(jack.age, jack.gender);
+// console.log(rose.favLanguage, rose.specialty, rose.catchPhrase);
+// fred.speak();
+// jack.demo('Ancient Rome History');
+// rose.grade(jane, 'Mathematics');
 
-console.log('======== Testing Students =========');
-console.log(johnny.name, johnny.location);
-console.log(jane.age, jane.gender);
-console.log(maria.previousBackground, maria.className, maria.favSubjects);
-johnny.speak();
-jane.listsSubjects();
-maria.PRAssignment('go backend');
-johnny.sprintChallenge('linux device driver');
+// console.log('======== Testing Students =========');
+// console.log(johnny.name, johnny.location);
+// console.log(jane.age, jane.gender);
+// console.log(maria.previousBackground, maria.className, maria.favSubjects);
+// johnny.speak();
+// jane.listsSubjects();
+// maria.PRAssignment('go backend');
+// johnny.sprintChallenge('linux device driver');
 
-console.log('======== Testing Project Managers =========');
-console.log(ashley.name, ashley.location);
-console.log(aletta.age, aletta.gender);
-console.log(vince.gradClassName, vince.favInstructor);
-ashley.standUp('WEBEU2');
-aletta.debugsCode(maria, 'React');
+// console.log('======== Testing Project Managers =========');
+// console.log(ashley.name, ashley.location);
+// console.log(aletta.age, aletta.gender);
+// console.log(vince.gradClassName, vince.favInstructor);
+// ashley.standUp('WEBEU2');
+// aletta.debugsCode(maria, 'React');
 
+
+// stretch testing grade method
+console.log(maria.grade);
+ashley.changeGrade(maria);
+console.log(maria.grade);
+
+
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
