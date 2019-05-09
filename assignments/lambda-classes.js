@@ -97,7 +97,7 @@ const rose = new Instructor({
   catchPhrase: 'Fully fuller'
 });
 
-const johnny = new Instructor({
+const johnny = new Student({
   name: 'Johnny',
   location: 'Little Town',
   age: 36,
@@ -107,7 +107,7 @@ const johnny = new Instructor({
   favSubjects: ['Html', 'CSS', 'JavaScript']
 });
 
-const jane = new Instructor({
+const jane = new Student({
   name: 'Jane',
   location: 'Deadwood',
   age: 28,
@@ -117,7 +117,7 @@ const jane = new Instructor({
   favSubjects: ['Go', 'C++', 'C']
 });
 
-const maria = new Instructor({
+const maria = new Student({
   name: 'Maria',
   location: 'Seattle',
   age: 27,
@@ -127,7 +127,7 @@ const maria = new Instructor({
   favSubjects: ['Haskell', 'Java']
 });
 
-const aletta = new Instructor({
+const aletta = new ProjectManager({
   name: 'Aletta',
   location: 'Singapore',
   age: 33,
@@ -136,7 +136,7 @@ const aletta = new Instructor({
   favInstructor: 'Dan'
 });
 
-const ashley = new Instructor({
+const ashley = new ProjectManager({
   name: 'Ashley',
   location: 'Cleveland',
   age: 29,
@@ -145,7 +145,7 @@ const ashley = new Instructor({
   favInstructor: 'Jackie'
 });
 
-const vince = new Instructor({
+const vince = new ProjectManager({
   name: 'Vince',
   location: 'Riga',
   age: 25,
@@ -153,3 +153,32 @@ const vince = new Instructor({
   gradClassName: 'CS50',
   favInstructor: 'Brian'
 });
+
+
+
+// testing code
+
+console.log('======== Testing Instructors =========');
+console.log(fred.name, fred.location);
+console.log(jack.age, jack.gender);
+console.log(rose.favLanguage, rose.specialty, rose.catchPhrase);
+fred.speak();
+jack.demo('Ancient Rome History');
+rose.grade(jane, 'Mathematics');
+
+console.log('======== Testing Students =========');
+console.log(johnny.name, johnny.location);
+console.log(jane.age, jane.gender);
+console.log(maria.previousBackground, maria.className, maria.favSubjects);
+johnny.speak();
+jane.listsSubjects();
+maria.PRAssignment('go backend');
+johnny.sprintChallenge('linux device driver');
+
+console.log('======== Testing Project Managers =========');
+console.log(ashley.name, ashley.location);
+console.log(aletta.age, aletta.gender);
+console.log(vince.gradClassName, vince.favInstructor);
+ashley.standUp('WEBEU2');
+aletta.debugsCode(maria, 'React');
+
